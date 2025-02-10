@@ -5,9 +5,8 @@ import { TextInput } from 'flowbite-react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import {FaMoon,FaSun} from 'react-icons/fa'
 import {useSelector,useDispatch} from 'react-redux'
-import {signOutSuccess} from '../redux/user/userSlice'
+import {signoutSuccess} from '../redux/user/userSlice'
 import {toggleTheme} from '../redux/theme/themeSlice' 
-
 
 export default function () {
     const path=useLocation().pathname  
@@ -24,7 +23,7 @@ export default function () {
             console.log(data.message);
           }
           else {
-            dispatch(signOutSuccess());
+            dispatch(signoutSuccess());
           }
         }
         catch(error){
