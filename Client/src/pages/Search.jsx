@@ -131,9 +131,12 @@ export default function Search() {
               id='category'
             >
               <option value='uncategorized'>Uncategorized</option>
-              <option value='reactjs'>React.js</option>
-              <option value='nextjs'>Next.js</option>
-              <option value='javascript'>JavaScript</option>
+              <option value='machinelearning'>Machine Learning</option>
+              <option value='naturallanguageprocessing'>Natural Langauge Processing</option>
+              <option value='computervision'>Computer Vision</option>
+              <option value='deeplearning'>Deep Learning</option>
+              <option value='cognitivecomputing'>Congitive Computing</option>
+              <option value='neuralnetworks'>Neural Networks</option>
             </Select>
           </div>
           <Button type='submit' outline gradientDuoTone='purpleToPink'>

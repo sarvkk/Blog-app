@@ -103,12 +103,12 @@ export default function CreatePost() {
             }
           >
             <option value='uncategorized'>Select a category</option>
-            <option value='javascript'>Machine Learning</option>
-            <option value='reactjs'>Natural Langauge Processing</option>
-            <option value='nextjs'>Computer Vision</option>
-            <option value='nextjs'>Deep Learning</option>
-            <option value='nextjs'>Congitive Computing</option>
-            <option value='nextjs'>Neural Networks</option>
+            <option value='machinelearning'>Machine Learning</option>
+            <option value='naturallanguageprocessing'>Natural Langauge Processing</option>
+            <option value='computervision'>Computer Vision</option>
+            <option value='deeplearning'>Deep Learning</option>
+            <option value='cognitivecomputing'>Congitive Computing</option>
+            <option value='neuralnetworks'>Neural Networks</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>

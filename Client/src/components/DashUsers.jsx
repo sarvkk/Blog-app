@@ -10,25 +10,25 @@ export default function DashUsers() {
   const [showMore, setShowMore] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [userIdToDelete, setUserIdToDelete] = useState('');
+  console.log('currentUser.isAdmin:', currentUser?.isAdmin); // Verify isAdmin status
   useEffect(() => {
     const fetchUsers = async () => {
       try {
         const res = await fetch(`/api/user/getusers`);
         const data = await res.json();
         if (res.ok) {
-          setUsers(data.users);
-          if (data.users.length < 9) {
-            setShowMore(false);
-          }
+          setUsers(data.users || []);
+          setShowMore(data.user?.length >= 9);
         }
       } catch (error) {
-        console.log(error.message);
+        console.error('Error fetching users:', error);
+        setUsers([]);
       }
     };
-    if (currentUser.isAdmin) {
+    if (currentUser?.isAdmin) {
       fetchUsers();
     }
-  }, [currentUser._id]);
+  }, [currentUser?.isAdmin,currentUser?._id]);
 
   const handleShowMore = async () => {
     const startIndex = users.length;
@@ -36,10 +36,8 @@ export default function DashUsers() {
       const res = await fetch(`/api/user/getusers?startIndex=${startIndex}`);
       const data = await res.json();
       if (res.ok) {
-        setUsers((prev) => [...prev, ...data.users]);
-        if (data.users.length < 9) {
-          setShowMore(false);
-        }
+        setUsers((prev) => [...prev, ...data.user]); // Access correct key
+        setShowMore(data.user.length >= 9);
       }
     } catch (error) {
       console.log(error.message);
@@ -65,7 +63,7 @@ export default function DashUsers() {
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 dark:scrollbar-track-slate-700 dark:scrollbar-thumb-slate-500'>
-      {currentUser.isAdmin && users.length > 0 ? (
+      {currentUser?.isAdmin && users?.length > 0 ? (
         <>
           <Table hoverable className='shadow-md'>
             <Table.Head>

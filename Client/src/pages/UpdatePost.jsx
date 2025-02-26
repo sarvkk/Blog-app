@@ -130,9 +130,12 @@ export default function UpdatePost() {
             value={formData.category}
           >
             <option value='uncategorized'>Select a category</option>
-            <option value='javascript'>JavaScript</option>
-            <option value='reactjs'>React.js</option>
-            <option value='nextjs'>Next.js</option>
+            <option value='machinelearning'>Machine Learning</option>
+            <option value='naturallanguageprocessing'>Natural Langauge Processing</option>
+            <option value='computervision'>Computer Vision</option>
+            <option value='deeplearning'>Deep Learning</option>
+            <option value='cognitivecomputing'>Congitive Computing</option>
+            <option value='neuralnetworks'>Neural Networks</option>
           </Select>
         </div>
         <div className='flex gap-4 items-center justify-between border-4 border-teal-500 border-dotted p-3'>
